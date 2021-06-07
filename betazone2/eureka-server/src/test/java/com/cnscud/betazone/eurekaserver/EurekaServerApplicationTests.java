@@ -1,0 +1,13 @@
+package com.cnscud.betazone.eurekaserver;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class EurekaServerApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}

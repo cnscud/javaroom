@@ -1,0 +1,28 @@
+server:
+  port: 9001
+
+
+spring:
+  application:
+    name: betazone-hello-remotename
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+      zone: main
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      zone: main #服务区域
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+
+logging:
+  level:
+    org.springframework.cloud: debug

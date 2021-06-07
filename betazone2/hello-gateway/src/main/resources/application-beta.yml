@@ -1,0 +1,53 @@
+server:
+  port: 8802
+
+spring:
+  application:
+    name: betazone-hello-gateway
+#  zipkin:
+#    base-url: http://localhost:9411
+#    #设置Sleuth的抽样收集概率
+#  sleuth:
+#    sampler:
+#      probability: 0.1
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        - id: default
+          uri: lb://betazone-hello-nameservice
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: remotename
+          uri: lb://betazone-hello-remotename
+          predicates:
+            - Path=/remoteapi/**
+          filters:
+            - StripPrefix=1
+    loadbalancer:
+      ribbon:
+        enabled: false
+      zone: beta
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      zone: beta
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    prefer-same-zone-eureka: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+logging:
+  level:
+    org.springframework.cloud: debug
