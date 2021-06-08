@@ -1,15 +1,9 @@
 server:
   port: 9002
 
-
 spring:
   application:
     name: betazone-hello-remotename
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
-      zone: beta
 
 eureka:
   instance:
@@ -21,7 +15,6 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone: http://localhost:8001/eureka/
-
 
 logging:
   level:

@@ -1,5 +1,5 @@
 server:
-  port: 8802
+  port: 8801
 
 spring:
   application:
@@ -14,7 +14,7 @@ spring:
           enabled: true
       routes:
         - id: default
-          uri: lb://betazone-hello-nameservice
+          uri: lb://betazone-hello-nameserviceSwaggerResourcesProvider
           predicates:
             - Path=/api/**
           filters:
@@ -28,20 +28,21 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-      zone: beta
+      zone: main
       #configurations: zone-preference
 
 eureka:
   instance:
     prefer-ip-address: true
     metadata-map:
-      zone: beta
+      zone: main
   client:
     register-with-eureka: true
     fetch-registry: true
     prefer-same-zone-eureka: true
     service-url:
       defaultZone: http://localhost:8001/eureka/
+
 
 logging:
   level:

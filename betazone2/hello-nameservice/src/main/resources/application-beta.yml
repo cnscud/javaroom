@@ -8,7 +8,6 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-      #zone: beta
 
 eureka:
   instance:

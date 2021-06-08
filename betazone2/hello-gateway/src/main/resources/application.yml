@@ -1,15 +1,9 @@
 server:
-  port: 8801
+  port: 8800
 
 spring:
   application:
     name: betazone-hello-gateway
-#  zipkin:
-#    base-url: http://localhost:9411
-#    #设置Sleuth的抽样收集概率
-#  sleuth:
-#    sampler:
-#      probability: 0.1
   main:
     allow-bean-definition-overriding: true
   cloud:
@@ -34,15 +28,13 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-      zone: main
 
 
 
 eureka:
   instance:
     prefer-ip-address: true
-    metadata-map:
-      zone: main
+
   client:
     register-with-eureka: true
     fetch-registry: true

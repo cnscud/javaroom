@@ -1,7 +1,6 @@
 server:
   port: 8101
 
-
 spring:
   application:
     name: betazone-hello-nameservice
@@ -9,9 +8,6 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-      #zone: main
-
-
 
 eureka:
   instance:
