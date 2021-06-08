@@ -16,7 +16,9 @@ import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Map;
 
-
+/**
+ * 姓名服务.
+ */
 @RestController
 @RequestMapping("remote")
 public class RemoteNameServiceController implements RemoteNameService {

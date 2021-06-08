@@ -6,6 +6,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * 远端接口定义.
+ */
 @FeignClient(value = "betazone-hello-remotename")
 public interface FeignRemoteNameService extends RemoteNameService {
 

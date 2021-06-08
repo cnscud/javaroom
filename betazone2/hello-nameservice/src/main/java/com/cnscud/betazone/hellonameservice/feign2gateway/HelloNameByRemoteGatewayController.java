@@ -14,7 +14,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- * Hello Controller from Remote Service.
+ * Hello Controller from Remote Service by gateway.
  *
  * @author Felix Zhang 2021-06-04 09:29
  * @version 1.0.0
