@@ -1,9 +1,9 @@
 server:
-  port: 8801
+  port: 8902
 
 spring:
   application:
-    name: betazone-hello-gateway
+    name: betazone-hello-mygateway
   main:
     allow-bean-definition-overriding: true
   cloud:
@@ -28,14 +28,14 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-      zone: main
+      zone: beta
       #configurations: zone-preference
 
 eureka:
   instance:
     prefer-ip-address: true
     metadata-map:
-      zone: main
+      zone: beta
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -43,7 +43,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8001/eureka/
 
-
 logging:
   level:
-    org.springframework.cloud: debug
+    org.springframework.cloud: info

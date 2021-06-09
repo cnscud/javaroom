@@ -1,9 +1,9 @@
 server:
-  port: 8801
+  port: 8900
 
 spring:
   application:
-    name: betazone-hello-gateway
+    name: betazone-hello-mygateway
   main:
     allow-bean-definition-overriding: true
   cloud:
@@ -28,14 +28,13 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-      zone: main
-      #configurations: zone-preference
+
+
 
 eureka:
   instance:
     prefer-ip-address: true
-    metadata-map:
-      zone: main
+
   client:
     register-with-eureka: true
     fetch-registry: true

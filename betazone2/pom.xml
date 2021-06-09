@@ -14,6 +14,7 @@
 		<module>hello-remotename</module>
 		<module>hello-nameservice</module>
 		<module>hello-gateway</module>
+		<module>hello-mygateway</module>
 	</modules>
 	<properties>
 		<spring-boot.version>2.5.0</spring-boot.version>

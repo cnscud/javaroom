@@ -1,9 +1,9 @@
 server:
-  port: 8801
+  port: 8901
 
 spring:
   application:
-    name: betazone-hello-gateway
+    name: betazone-hello-mygateway
   main:
     allow-bean-definition-overriding: true
   cloud:
