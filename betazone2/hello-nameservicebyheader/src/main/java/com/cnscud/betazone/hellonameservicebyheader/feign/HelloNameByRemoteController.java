@@ -60,9 +60,11 @@ public class HelloNameByRemoteController {
         logger.debug("call helloById with " + userid);
 
         logger.info("[nameservice] workzone header:" + request.getHeader("workzone"));
+        /*
 
-        //测试代码, @fixme  应该放到filter中
+        //测试代码, 移入到filter中
         RequestHeaderHolder.set(request.getHeader("workzone"));
+        */
 
         //测试异步调用
         new Thread(new Runnable() {
