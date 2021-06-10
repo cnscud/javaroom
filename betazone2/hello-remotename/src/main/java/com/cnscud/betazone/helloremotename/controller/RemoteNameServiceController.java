@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -21,7 +22,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("remote")
-public class RemoteNameServiceController implements RemoteNameService {
+public class RemoteNameServiceController {
     private static Logger logger = LoggerFactory.getLogger(RemoteNameServiceController.class);
 
     @Autowired
@@ -38,9 +39,10 @@ public class RemoteNameServiceController implements RemoteNameService {
         names.put(5, "Mountain");
     }
 
-    @Override
     @RequestMapping("/id/{id}")
-    public String readName(@PathVariable("id") int id) {
+    public String readName(@PathVariable("id") int id, HttpServletRequest request) {
+
+        logger.info("[remotename] workzone header:" + request.getHeader("workzone"));
 
         if( names.get(id) == null ) {
             return defaultName + getServerName();

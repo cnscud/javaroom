@@ -13,9 +13,12 @@
 		<module>hello-remotename-core</module>
 		<module>hello-remotename</module>
 		<module>hello-nameservice</module>
+		<module>hello-nameservicebyheader</module>
 		<module>hello-gateway</module>
 		<module>hello-mygateway</module>
-	</modules>
+		<module>hello-mybalancerbyheader</module>
+        <module>hello-pubtool</module>
+    </modules>
 	<properties>
 		<spring-boot.version>2.5.0</spring-boot.version>
 		<spring-cloud.version>2020.0.3</spring-cloud.version>

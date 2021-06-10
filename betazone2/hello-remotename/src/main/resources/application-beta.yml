@@ -19,3 +19,4 @@ eureka:
 logging:
   level:
     org.springframework.cloud: debug
+    com.cnscud.betazone: debug

@@ -1,0 +1,50 @@
+server:
+  port: 9200
+
+spring:
+  application:
+    name: betazone-hello-mybalancerbyheader
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        - id: default
+          uri: lb://betazone-hello-nameservicebyheader
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: remotename
+          uri: lb://betazone-hello-remotename
+          predicates:
+            - Path=/remoteapi/**
+          filters:
+            - StripPrefix=1
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    prefer-same-zone-eureka: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+
+logging:
+  level:
+    org.springframework.cloud: debug
+    com.cnscud.betazone: debug
+
