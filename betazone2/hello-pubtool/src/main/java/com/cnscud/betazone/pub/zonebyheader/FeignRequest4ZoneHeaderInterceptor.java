@@ -3,8 +3,6 @@ package com.cnscud.betazone.pub.zonebyheader;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 
-import java.util.Map;
-
 /**
  * Feign Interceptor for transfer header.
  *

@@ -1,6 +1,7 @@
 package com.cnscud.betazone.hellonameservicebyheader.feign;
 
 
+import com.cnscud.betazone.hellonameservicebyheader.config.FeignByZoneHeaderConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
