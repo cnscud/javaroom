@@ -23,4 +23,6 @@
 * [Spring Cloud分区发布实践(2)](https://blog.cnscud.com/springcloud/2021/06/07/springcloud-betazonedemo-2.html)
 * [Spring Cloud分区发布实践(3)](https://blog.cnscud.com/springcloud/2021/06/07/springcloud-betazonedemo-3.html)
 * [Spring Cloud分区发布实践(4)](https://blog.cnscud.com/springcloud/2021/06/07/springcloud-betazonedemo-4.html)
+* [Spring Cloud分区发布实践(5) 定制ServiceInstanceListSupplier](https://blog.cnscud.com/springcloud/2021/06/07/springcloud-betazonedemo-5.html)
+* [Spring Cloud分区发布实践(6) 灰度服务-根据Header选择实例区域](https://blog.cnscud.com/springcloud/2021/06/07/springcloud-betazonedemo-6.html)
 
