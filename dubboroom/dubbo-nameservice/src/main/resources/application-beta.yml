@@ -1,0 +1,53 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: dubbo-nameservice
+  cloud:
+    nacos:
+      discovery:
+        metadata:
+          group: main-group
+          zone: beta
+        server-addr: 127.0.0.1:8848
+
+
+dubbo:
+  scan:
+    base-packages: com.cnscud.dubboroom.dubbonameservice.service
+  protocol:
+    name: dubbo
+    port: 20882
+    parameters:
+      workzone: beta
+  metadata-report:
+    address: nacos://127.0.0.1:8848
+  registry:
+#    address: spring-cloud://localhost
+    address: nacos://127.0.0.1:8848
+  cloud:
+    subscribed-services:
+  provider:
+#    tag: beta
+    parameters:
+      hellozone: hbeta
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    metadata-map:
+#      zone: beta #服务区域
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8001/eureka/
+
+
+
+logging:
+  level:
+    org.springframework.cloud: info
+    com.cnscud.dubboroom: debug

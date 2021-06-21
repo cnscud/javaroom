@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: dubbo-web
+
+server:
+  port: 9201
+
+dubbo:
+#  provider:
+#    loadbalance: mylbl
+  consumer:
+#    loadbalance: mylbl
+    filter: myfilter
+    router: myrouter
+    cache: false
+  registry:
+    address: nacos://127.0.0.1:8848
+  cloud:
+    subscribed-services: dubbo-nameservice,dubbo-helloname
+
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8001/eureka/
+
+
+
+logging:
+  level:
+    org.springframework.cloud: info
+    com.cnscud.dubboroom: debug
+
